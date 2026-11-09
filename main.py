@@ -19,7 +19,6 @@ arm1 = box(pos=vec(0.3,0.38,0),size = vec(0.5,0.2,0.3),color = color.blue)
 arm2 = box(pos=vec(-0.3,0.38,0),size = vec(0.5,0.2,0.3),color = color.red)
 
 rolling_ball = compound([body,arm1,arm2])
-maps = []
 
 for i in range(100):
    z = -1+i * 3
