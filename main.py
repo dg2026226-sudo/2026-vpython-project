@@ -31,4 +31,44 @@ while True :
         s.pos.x += 0.1
     if 'a' in k :
         s.pos.x -= 0.1
-        
+        3차시
+        Web VPython 3.2
+import random
+body = sphere(radius=0.5)
+arm1 = box(pos=vec(0.3,0.38,0),size = vec(0.5,0.2,0.3),color = color.blue)
+arm2 = box(pos=vec(-0.3,0.38,0),size = vec(0.5,0.2,0.3),color = color.red)
+
+s = compound([body,arm1,arm2])
+#중력
+g = vec(0,-9.8,0)
+s.v = vec(0,0,0)
+dt = 0.01
+
+while s.pos.y >= 0.5:
+    rate(100)
+    s.pos = s.pos + s.v*dt
+    s.v = s.v + g*dt
+
+for i in range(100):
+   z = -1+i * 3
+   
+   map = box(pos=vec(0,-0.6,-z),size=vec(3.4,0.3,3),color=vec(0.2,0.8,0))
+
+obstacles = []
+
+for i in range(30):
+    x = random.choice([-1,0,1])
+    z = -random.randint(1,100)*3
+
+    obstacle = box(pos=vec(x,0.3,z),size=vec(0.8,0.8,0.8),color=color.orange)
+
+    obstacles.append(obstacle)
+
+while True :
+    rate(100)
+    k = keysdown()
+    if 'd' in k :
+        s.pos.x += 0.1
+    if 'a' in k :
+        s.pos.x -= 0.1
+
